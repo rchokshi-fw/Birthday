@@ -67,8 +67,11 @@
             const userGuess = document.getElementById('user-guess').value;
             const correctAnswer = (0b10111 & 0b11111) ^ (0b1100 | 0b1010);
             const resultMessage = document.getElementById('result-message');
+            
+            console.log(`User Guess: ${userGuess}`); // Debugging line
+            console.log(`Correct Answer: ${correctAnswer}`); // Debugging line
 
-            if (Math.abs(userGuess - correctAnswer) < 0.001) { // Allowing a small margin of error
+            if (userGuess == correctAnswer) { // Compare as strings
                 resultMessage.textContent = 'Oh No! You found correct age!';
                 resultMessage.style.color = 'green';
             } else {
