@@ -14,6 +14,8 @@
         }
         .container {
             padding: 50px;
+            background: rgba(255, 255, 255, 0.8); /* Light contrast overlay */
+            border-radius: 10px;
         }
         h1 {
             color: #ff6347;
@@ -24,14 +26,8 @@
             color: #333;
         }
         .cake-image {
-            margin-top: 20px;
+            display: none; /* Hide the inline cake image */
         }
-        img {
-            max-width: 300px;
-            width: 100%;
-            height: auto;
-        }
-        /* Additional styles for the game */
         #math-problem {
             font-size: 24px;
             margin-bottom: 20px;
@@ -49,17 +45,29 @@
             margin-top: 20px;
             font-size: 18px;
         }
+        /* Add the background image */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/cake.jpg') no-repeat center center fixed;
+            background-size: cover;
+            opacity: 0.3; /* Light contrast */
+            z-index: -1;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1> Geburtstagskuchen ! 🎉</h1>
-        <p> Kuchen stehen am Meeting-Point!
-    </p>
+        <p> Kuchen stehen am Meeting-Point! </p>
         <div class="cake-image">
-            <img src="images/cake.jpg" alt="Birthday Cake">
+            <img src="https://raw.githubusercontent.com/rchokshi-fw/Birthday/main/cake.png" alt="Birthday Cake">
         </div>
-        <h2>Guess My Age</h2>
+        <h2>Guess the Age</h2>
         <div id="math-problem"> \( (0b10111 \& 0b11111) \oplus (0b1100 | 0b1010) \)</div>
         <input type="number" id="user-guess" placeholder="Enter your answer">
         <button onclick="checkAnswer()">Submit</button>
@@ -75,7 +83,7 @@
                 resultMessage.textContent = 'Oh No! You found correct age!';
                 resultMessage.style.color = 'green';
             } else {
-                resultMessage.textContent = 'Sorry, Try again!';
+                resultMessage.textContent = 'Sorry, please try again!';
                 resultMessage.style.color = 'red';
             }
         }
