@@ -57,7 +57,7 @@
         <h1> Geburtstagskuchen ! 🎉</h1>
         <p> Kuchen stehen am Meeting-Point! </p>
         <h2>Guess the Age</h2>
-        <div id="math-problem">Solve: \( \sqrt{((0b1001001 \oplus 0b1000101) + (0b1101 \cdot 0b11) \& 0b111111)} \)</div>
+        <div id="math-problem">Solve: 30 + 5</div>
         <input type="number" id="user-guess" placeholder="Enter your answer">
         <button onclick="checkAnswer()">Submit</button>
         <p id="result-message"></p>
@@ -65,19 +65,14 @@
     <script>
         function checkAnswer() {
             const userGuess = document.getElementById('user-guess').value;
-            // Calculate the correct answer
-            const part1 = 0b1001001 ^ 0b1000101; // XOR operation
-            const part2 = 0b1101 * 0b11;       // Multiplication
-            const part3 = part2 & 0b111111;    // AND operation
-            const part4 = part1 + part3;       // Addition
-            const correctAnswer = Math.sqrt(part4); // Square root
+            const correctAnswer = 30 + 5; // Simple addition to get 35
             
             const resultMessage = document.getElementById('result-message');
             
             console.log(`User Guess: ${userGuess}`); // Debugging line
             console.log(`Correct Answer: ${correctAnswer}`); // Debugging line
 
-            if (Math.abs(userGuess - correctAnswer) < 0.001) { // Allowing a small margin of error
+            if (userGuess == correctAnswer) { // Compare as strings
                 resultMessage.textContent = 'Oh No! You found the correct age!';
                 resultMessage.style.color = 'green';
             } else {
