@@ -57,7 +57,7 @@
         <h1> Geburtstagskuchen ! 🎉</h1>
         <p> Kuchen stehen am Meeting-Point! </p>
         <h2>Guess the Age</h2>
-        <div id="math-problem">Solve: (√100000 XOR √110010) AND (√101010 OR √111000)</div>
+        <div id="math-problem">Solve: (√100000 + √110010) XOR (√101010 + √111000)</div>
         <input type="number" id="user-guess" placeholder="Enter your answer">
         <button onclick="checkAnswer()">Submit</button>
         <p id="result-message"></p>
@@ -65,7 +65,7 @@
     <script>
         function checkAnswer() {
             const userGuess = document.getElementById('user-guess').value;
-            const correctAnswer = (Math.floor(Math.sqrt(parseInt('100000', 2))) ^ Math.floor(Math.sqrt(parseInt('110010', 2)))) & (Math.floor(Math.sqrt(parseInt('101010', 2))) | Math.floor(Math.sqrt(parseInt('111000', 2)))); // Complex formula with binary numbers
+            const correctAnswer = (Math.floor(Math.sqrt(parseInt('100000', 2))) + Math.floor(Math.sqrt(parseInt('110010', 2)))) ^ (Math.floor(Math.sqrt(parseInt('101010', 2))) + Math.floor(Math.sqrt(parseInt('111000', 2)))); // Complex formula with binary numbers
             
             const resultMessage = document.getElementById('result-message');
             
