@@ -46,17 +46,9 @@
             font-size: 18px;
         }
         /* Add the background image */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('images/cake.jpg') no-repeat center center fixed;
+        body {
+            background: url('https://raw.githubusercontent.com/rchokshi-fw/Birthday/main/cake.png') no-repeat center center fixed;
             background-size: cover;
-            opacity: 0.3; /* Light contrast */
-            z-index: -1;
         }
     </style>
 </head>
@@ -64,9 +56,6 @@
     <div class="container">
         <h1> Geburtstagskuchen ! 🎉</h1>
         <p> Kuchen stehen am Meeting-Point! </p>
-        <div class="cake-image">
-            <img src="https://raw.githubusercontent.com/rchokshi-fw/Birthday/main/cake.png" alt="Birthday Cake">
-        </div>
         <h2>Guess the Age</h2>
         <div id="math-problem"> \( (0b10111 \& 0b11111) \oplus (0b1100 | 0b1010) \)</div>
         <input type="number" id="user-guess" placeholder="Enter your answer">
