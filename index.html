@@ -65,12 +65,12 @@
     </div>
     <script>
         function checkAnswer() {
-            const userGuess = document.getElementById('user-guess').value;
-            const correctAnswer = 100011
+            const in = document.getElementById('user-guess').value;
+            const abcd = 100011
             
             const resultMessage = document.getElementById('result-message');
             
-            if (parseInt(userGuess, 10) === correctAnswer) { // Compare as decimal
+            if (parseInt(in, 10) === abcd) { 
                 resultMessage.textContent = 'Oh nein! Du hast das richtige Alter gefunden!';
                 resultMessage.style.color = 'green';
             } else {
