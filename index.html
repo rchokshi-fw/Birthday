@@ -70,9 +70,6 @@
             
             const resultMessage = document.getElementById('result-message');
             
-            console.log(`User Guess: ${userGuess}`); // Debugging line
-            console.log(`Correct Answer: ${correctAnswer}`); // Debugging line
-
             if (parseInt(userGuess, 10) === correctAnswer) { // Compare as decimal
                 resultMessage.textContent = 'Oh nein! Du hast das richtige Alter gefunden!';
                 resultMessage.style.color = 'green';
